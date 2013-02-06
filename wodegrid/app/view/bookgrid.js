@@ -16,11 +16,14 @@
 //     }
 // });
 Ext.require('Ext.grid.RowNumberer');
+Ext.require('Ext.selection.CheckboxModel');
+
 Ext.define('wodegrid.view.bookgrid', {
 	extend:'Ext.grid.Panel',
 	alias:'widget.bookgrid',
     title: 'Simpsons',
     store: 'book',
+    selModel: Ext.create('Ext.selection.CheckboxModel'), //1
     initComponent:function(){
          this.store='book';
          this.columns=[ Ext.create('Ext.grid.RowNumberer'),
