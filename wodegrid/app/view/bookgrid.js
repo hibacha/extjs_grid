@@ -2,19 +2,39 @@
 Ext.require('Ext.grid.RowNumberer');
 
 
+
+var rowEditing=Ext.create('Ext.grid.plugin.RowEditing', {
+          clicksToEdit: 1
+       });
+var tmp11;      
 Ext.define('wodegrid.view.bookgrid', {
 	extend:'Ext.grid.Panel',
 	alias:'widget.bookgrid',
     title: 'Simpsons',
     store: 'book',
+    id:'mybookgrid',
     require:'Ext.selection.CheckboxModel', 
-    selType: 'cellmodel',
-    selModel: Ext.create('Ext.selection.CheckboxModel'), //1
-    plugins: [
-       Ext.create('Ext.grid.plugin.CellEditing', {
-          clicksToEdit: 1
-       })
-   ],
+    selType: 'rowmodel',
+    plugins: rowEditing, 
+    dockedItems:[{
+     xtype:'toolbar',
+     items:[{
+      text:'add',
+      handler: function(){
+        rowEditing.cancelEdit();
+        var r=Ext.ModelManager.create({name:'New',phone:'1111',email:'mail'},'wodegrid.model.book');
+        var store=Ext.ComponentQuery.query('grid')[0].getStore();
+        store.insert(0,r);
+        rowEditing.startEdit(0,0);
+        
+      }
+     },{
+        text:'delete',
+        handler:function(){
+        
+        }
+     }]
+   }],
     initComponent:function(){
          this.store='book';
          this.columns=[ Ext.create('Ext.grid.RowNumberer'),
@@ -22,7 +42,10 @@ Ext.define('wodegrid.view.bookgrid', {
          xtype:'textfield',
          allowBlank:false
       }},
-        { text: 'Email', dataIndex: 'email', flex: 1 },
+        { text: 'Email', dataIndex: 'email', flex: 1,editor: {
+         xtype:'textfield',
+         allowBlank:false
+      } },
         { text: 'Phone', dataIndex: 'phone' }
         ];
              

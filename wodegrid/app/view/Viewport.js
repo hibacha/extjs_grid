@@ -23,9 +23,12 @@ Ext.define('wodegrid.view.Viewport', {
         items:[{
             title: 'Center Tab 1',
             html: "<b>BOLD</b>",
-            items:[{xtype:'button',text:'df'},{xtype:'myview'},{xtype:'bookgrid'}
-            
-            ]
+            items:[{xtype:'button',text:'test button'},
+            	   {xtype:'myview'},
+            	   {xtype:'bookgrid'}]
+        },{
+           title:'Center Tab 2',
+           html:'<B>TAB2</B>'
         }]
     }]
 });
