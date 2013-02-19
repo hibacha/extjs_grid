@@ -1,3 +1,7 @@
+var generateButton=function (){
+//   return Ext.create('Ext.Button',{text:"Ext Create"});
+  return new Ext.Button({text:"Ext New Create"});
+};
 Ext.define('wodegrid.view.Viewport', {
     extend: 'Ext.container.Viewport',
     requires:[
@@ -5,7 +9,8 @@ Ext.define('wodegrid.view.Viewport', {
         'Ext.layout.container.Border',
         'wodegrid.view.Main',
         'wodegrid.view.bookgrid',
-        'wodegrid.store.book'
+        'wodegrid.store.book',
+        'wodegrid.view.DetailFormPanel'
     ],
 
     layout: {
@@ -25,10 +30,12 @@ Ext.define('wodegrid.view.Viewport', {
             html: "<b>BOLD</b>",
             items:[{xtype:'button',text:'test button'},
             	   {xtype:'myview'},
-            	   {xtype:'bookgrid'}]
+            	   {xtype:'bookgrid'},
+            	   {xtype:'DetailFormPanel'}]
         },{
            title:'Center Tab 2',
-           html:'<B>TAB2</B>'
+           html:'<B>TAB2</B>',
+           items:[generateButton()]
         }]
     }]
 });

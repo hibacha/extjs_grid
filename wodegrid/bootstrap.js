@@ -171,3 +171,4 @@ Ext.Loader.addClassPathMappings({
     "proxy.pagingmemory"
   ]
 });
+var su;
