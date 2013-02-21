@@ -19,6 +19,8 @@ Ext.define('wodegrid.controller.Main', {
        },
        'bookgrid':{
           itemclick:this.onItemClick
+       },
+       'panel[id="wow1"]':{render:function(){alert("zz");}
        }
      });
     },

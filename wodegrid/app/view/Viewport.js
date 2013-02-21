@@ -1,7 +1,8 @@
-var generateButton=function (){
-//   return Ext.create('Ext.Button',{text:"Ext Create"});
-  return new Ext.Button({text:"Ext New Create"});
-};
+
+var tab2_outter_panel=Ext.create("Ext.panel.Panel",{items:[{xtype:'button',text:'btn1'}],id:'zhenId',itemId:'wow1',title:'panel2',width:'50%',height:500,frame:true, listeners: {
+        render:function(me){ tab2_outter_panel.setLoading(true);console.log('beforerender');},afterrender:function(){ console.log("afterrender");}
+    }});
+
 Ext.define('wodegrid.view.Viewport', {
     extend: 'Ext.container.Viewport',
     requires:[
@@ -35,7 +36,7 @@ Ext.define('wodegrid.view.Viewport', {
         },{
            title:'Center Tab 2',
            html:'<B>TAB2</B>',
-           items:[generateButton()]
+           items:[tab2_outter_panel]
         }]
     }]
 });
