@@ -17,6 +17,47 @@ Ext.define('wodegrid.controller.Main', {
        'button[text="test button"]':{
          click:this.onClick
        },
+       'button[text="btn1"]':{
+        click:function(){
+          var _windows=Ext.create('Ext.window.Window', {
+          title: 'Hello',
+    	  height: 200,
+          width: 400,
+          modal:true,
+          id:'mywindows',
+          layout: 'fit',
+          closeAction:'destroy',
+          listeners:{
+            "destroy":function(){
+              console.log('destroy');
+            },
+            "close":function(){
+               console.log('close');
+            },
+            "hide":function(){
+               console.log('hide');
+            }
+          },
+          items: {  // Let's put an empty grid in just to illustrate fit layout
+             xtype: 'grid',
+             border: false,
+             columns: [{header: 'World'}],                 // One header just for show. There's no data,
+             store: Ext.create('Ext.data.ArrayStore', {}), // A dummy empty data store
+             listeners: {
+                click: {
+                  element: 'el', //bind to the underlying el property on the panel
+                  fn: function(e){ console.log(e); }
+                 },
+                dblclick: {
+                  element: 'body', //bind to the underlying body property on the panel
+                  fn: function(){ console.log('dblclick body'); }
+                }
+              }
+           }
+          }).show();
+        
+        }
+       },
        'bookgrid':{
           itemclick:this.onItemClick
        },

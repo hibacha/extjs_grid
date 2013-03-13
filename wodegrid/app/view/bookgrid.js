@@ -7,6 +7,9 @@ var rowEditing=Ext.create('Ext.grid.plugin.RowEditing', {
           clicksToEdit: 1
        });
 var tmp11;      
+
+
+
 Ext.define('wodegrid.view.bookgrid', {
 	extend:'Ext.grid.Panel',
 	alias:'widget.bookgrid',

@@ -2,16 +2,24 @@ Ext.Loader.setConfig({
         enabled : true
     });
 Ext.require('Ext.grid.plugin.RowEditing');
-Ext.require("wodegrid.utility.StringUtil");
+
 
 Ext.application({
-    models: ["Customer"],
+    views: ["SomeView"],
 
-    controllers: ["Main"],
+    models: ["WeatherRecord","User","Customer"],
+
+    controllers: ["Central","Main"],
 
     name: 'wodegrid',
 
-    autoCreateViewport: true
+    autoCreateViewport: true,
+    init:function(){
+    console.log("app init");
+    },
+    launch:function(){
+    console.log("launch");
+    }
 });
 
 var su;
