@@ -1,9 +1,9 @@
-Ext.define('wodegrid.model.WeatherRecord', {
+Ext.define('wodegrid.model.weatherRecord', {
     extend: 'Ext.data.Model',
     
     fields: [
         { name: 'city', type: 'string' },
-        { name: 'tempC', type: 'float' },
+        { name: 'temp_C', type: 'float' },
         { name: 'temp_F', type: 'auto' },
         { name: 'wdate', type: 'date' }
     ]

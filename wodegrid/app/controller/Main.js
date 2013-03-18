@@ -10,8 +10,8 @@
 //var su=wodegrid.utility.StringUtil;
 Ext.define('wodegrid.controller.Main', {
     extend: 'Ext.app.Controller',
-    stores:['book'],
-    models:['book'],
+    stores:['book','weatherRecord'],
+    models:['book','weatherRecord'],
     init:function(){
      this.control({
        'button[text="test button"]':{

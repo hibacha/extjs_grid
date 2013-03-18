@@ -14,7 +14,6 @@ Ext.define('wodegrid.view.bookgrid', {
 	extend:'Ext.grid.Panel',
 	alias:'widget.bookgrid',
     title: 'Simpsons',
-    store: 'book',
     id:'mybookgrid',
     require:'Ext.selection.CheckboxModel', 
     selType: 'rowmodel',
