@@ -10,12 +10,15 @@
 //var su=wodegrid.utility.StringUtil;
 Ext.define('wodegrid.controller.Main', {
     extend: 'Ext.app.Controller',
-    stores:['book','weatherRecord'],
-    models:['book','weatherRecord'],
+    stores:['book','weatherRecord','weatherForecast'],
+  //  models:['book','weatherRecord','weatherForecast'],
     init:function(){
      this.control({
        'button[text="test button"]':{
          click:this.onClick
+       },
+       'button[text="Ajax Load"]':{
+          click:function(){alert();}
        },
        'button[text="btn1"]':{
         click:function(){

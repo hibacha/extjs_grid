@@ -1,7 +1,8 @@
 {
-   "root":[{city:"BOS",temp_C:10,temp_F:34,wdate:"2012"}],
+   
    "data":{
-      
+      "root":[{city:"BOS",temp_C:10,temp_F:34,wdate:"06/04/2012","visibility":"16"},
+              {city:"NYC",temp_C:90,temp_F:34,wdate:"07/08/2012","visibility":"16"}],
       "current_condition":[
          {
             "cloudcover":"25",

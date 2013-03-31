@@ -5,9 +5,9 @@ Ext.require('Ext.grid.plugin.RowEditing');
 
 
 Ext.application({
-    views: ["SomeView"],
+    views: ["WeatherForecastView","SomeView"],
 
-    models: ["WeatherRecord","User","Customer"],
+    models: ["weatherForecast","WeatherRecord","User","Customer"],
 
     controllers: ["Central","Main"],
 
@@ -18,7 +18,7 @@ Ext.application({
     console.log("app init");
     },
     launch:function(){
-    console.log("launch");
+    console.log("app launch");
     }
 });
 
