@@ -11,7 +11,7 @@ Ext.define('wodegrid.model.weatherRecord', {
           type: 'auto'
         }
     ],
-    proxy: {/**/
+    proxy: {
       type: 'jsonp',
       url : 'http://free.worldweatheronline.com/feed/weather.ashx?q=BOSTON,USA&format=json&num_of_days=2&key=9e85ce10ff000457131103',
       

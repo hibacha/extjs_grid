@@ -18,7 +18,9 @@ Ext.define('wodegrid.controller.Main', {
          click:this.onClick
        },
        'button[text="Ajax Load"]':{
-          click:function(){alert();}
+          click:function(){
+            Ext.getStore('weatherRecord').load();
+          }
        },
        'button[text="btn1"]':{
         click:function(){

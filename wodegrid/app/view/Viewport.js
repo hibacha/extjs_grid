@@ -9,6 +9,8 @@ var tab2_outter_panel = Ext.create("Ext.panel.Panel", {
         }
     ],
     id: 'zhenId',
+    collapsible:true,
+    split:true,
     itemId: 'wow1',
     title: 'panel2',
     width: '50%',
@@ -72,7 +74,8 @@ Ext.define('wodegrid.view.Viewport', {
             'wodegrid.view.DetailFormPanel',
             'wodegrid.view.SomeView',
             'wodegrid.store.weatherRecord',
-            'wodegrid.view.WeatherForecastView'
+            'wodegrid.view.WeatherForecastView',
+            'wodegrid.view.borderView'
     ],
 
     layout: {
@@ -133,6 +136,7 @@ Ext.define('wodegrid.view.Viewport', {
                             plain: true,
                             frame: false,
                             locked: "yes",
+                            height: 500,
                             listeners: {
                                 'show': function (me) {
                                 var imageComponent = me.query("panel[id='imageCt']")[0].child("image");
@@ -146,10 +150,11 @@ Ext.define('wodegrid.view.Viewport', {
                                      
                                 }
                             },
-                            layout: '',
+                            layout: 'anchor',
+                            
                             items: [{
-                                    width: '100%',
-
+                                    anchor:'100% 50%',
+									id:'panel_ct',
                                     xtype: 'panel',
                                     clsBase: 'x-plain',
                                     layout: "column",
@@ -197,6 +202,8 @@ Ext.define('wodegrid.view.Viewport', {
                             ]
                         }
                     ]
+                },{
+                  xtype:'borderView'
                 }
             ]
         }
