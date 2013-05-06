@@ -8,7 +8,8 @@ Ext.define('wodegrid.view.borderView', {
             region: 'west',
             title: 'west',
             width: 100,
-            collapsible: true
+            //collapsible: true,
+            split:true
         }, {
             region: 'center',
             title: 'center'

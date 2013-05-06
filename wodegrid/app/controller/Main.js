@@ -20,6 +20,7 @@ Ext.define('wodegrid.controller.Main', {
        'button[text="Ajax Load"]':{
           click:function(){
             Ext.getStore('weatherRecord').load();
+            Ext.ComponentQuery.query('viewport someview')[0];
           }
        },
        'button[text="btn1"]':{

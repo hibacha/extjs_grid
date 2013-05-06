@@ -8,8 +8,15 @@ Ext.define("wodegrid.view.SomeView", {
 
         this.store = 'weatherRecord',
         this.columns = [{
+                dataIndex: 'temp_C',
+                text: 'Temperature'
+            }, {
+                dataIndex: 'temp_F',
+                text: 'Temperature',
+                hidden: true
+            }, {
                 dataIndex: 'cloudcover',
-                text: "cloudcover"
+                text: "Cloud Cover Percentage"
             }, {
                 dataIndex: "humidity",
                 text: "humidity"
@@ -19,12 +26,18 @@ Ext.define("wodegrid.view.SomeView", {
             }, {
                 dataIndex: "precipMM",
                 text: "precipMM"
-            },{ dataIndex: "pressure",
-            	text: "pressure"
-            },{ dataIndex: "weatherIconUrl",
+            }, {
+                dataIndex: "pressure",
+                text: "pressure"
+            },{
+            	dataIndex:'weatherDesc',
+            	text: 'Description'
+            }, 
+            {
+                dataIndex: "weatherIconUrl",
                 text: "image",
-                renderer:function(value, record){
-                  return "<img src='"+value[0].value+"'/>";
+                renderer: function (value, record) {
+                    return "<img src='" + value[0].value + "'/>";
                 }
             }
         ];
