@@ -70,10 +70,10 @@ Ext.define('wodegrid.view.Viewport', {
             'Ext.layout.container.Border',
             'wodegrid.view.Main',
             'wodegrid.view.bookgrid',
-            'wodegrid.store.book',
+         //   'wodegrid.store.book',
             'wodegrid.view.DetailFormPanel',
             'wodegrid.view.SomeView',
-            'wodegrid.store.weatherRecord',
+          // 'wodegrid.store.weatherRecord',
             'wodegrid.view.WeatherForecastView',
             'wodegrid.view.borderView'
     ],
@@ -116,14 +116,17 @@ Ext.define('wodegrid.view.Viewport', {
                             xtype: 'label',
                             forId: 'myFieldId',
                             text: 'My Awesome Field',
-                            margin: '0 0 0 10'
+                            margin: '100 10 0 10'
                         }, {
-                            xtype: 'someview'
+                            xtype: 'someview',
+                            height: 200
                         },{
                             xtype:'forecastView'
                         },{xtype:'button',
                            text:'Ajax Load'
-                           
+                        },{
+                        	xtype:'button',
+                        	text:'C/F'
                         }
                     ]
                 }, {
@@ -135,11 +138,14 @@ Ext.define('wodegrid.view.Viewport', {
                             autoShow: true,
                             plain: true,
                             frame: false,
+                            
                             locked: "yes",
                             height: 500,
                             listeners: {
                                 'show': function (me) {
                                 var imageComponent = me.query("panel[id='imageCt']")[0].child("image");
+                                console.log(me.getComponent(0));
+                                //var imageComponent = me.getComponent('#imageCt');
                                 // var imageComponent = me.query("panel[id='imageCt']")[0].items.getAt(0);
                                 // var imageComponent = me.query("panel[id='imageCt'] image")[0];
                                     imageComponent.getEl().dom.src="http://www.sencha.com/img/20110215-feat-html5.png";
@@ -150,18 +156,19 @@ Ext.define('wodegrid.view.Viewport', {
                                      
                                 }
                             },
-                            layout: 'anchor',
-                            
+                            layout:'anchor',
                             items: [{
-                                    anchor:'100% 50%',
+                            		
+                                    anchor:'80% 50%',
 									id:'panel_ct',
                                     xtype: 'panel',
                                     clsBase: 'x-plain',
                                     layout: "column",
+                                    border: false,
                                     items: [{
                                             frame: true,
-                                            columnWidth: 0.5,
-
+                                            columnWidth: 0.4,
+											border: false,
                                             items: [{
                                                     xtype: 'textfield',
                                                     fieldLabel: 'text'
@@ -170,7 +177,7 @@ Ext.define('wodegrid.view.Viewport', {
 
                                         }, {
                                             frame: true,
-                                            columnWidth: 0.5,
+                                            columnWidth: 0.4,
                                             layout: 'form',
                                             items: [{
                                                     xtype: 'textfield',
@@ -183,8 +190,8 @@ Ext.define('wodegrid.view.Viewport', {
                                         }
                                     ]
                                 }, {
+                                	anchor: '70% 30%',
                                     id: 'imageCt',
-                                    height: 300,
                                     bodyStyle: {
                                         background: '#ffc'
                                     },

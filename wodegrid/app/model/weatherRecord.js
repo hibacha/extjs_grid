@@ -7,6 +7,7 @@ Ext.define('wodegrid.model.weatherRecord', {
         { name: 'observation_time', type: 'string' },
         { name: 'precipMM', type: 'float' },
         { name: 'pressure',type:'float'},
+        { name: 'temp_C', type: 'int'},
         { name: 'weatherIconUrl', 
           type: 'auto'
         }

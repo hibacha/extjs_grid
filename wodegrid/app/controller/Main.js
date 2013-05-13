@@ -11,11 +11,37 @@
 Ext.define('wodegrid.controller.Main', {
     extend: 'Ext.app.Controller',
     stores:['book','weatherRecord','weatherForecast'],
-  //  models:['book','weatherRecord','weatherForecast'],
+    views:['SomeView'],
+    myview:null,
     init:function(){
+     console.log('main controller init');
      this.control({
+       'someview':{
+       	  viewready:function(me){
+       	    //me.getStore().load();
+       	    this.getStore('weatherRecord').load();
+       	    this.myview = me;
+       	  	
+       	  }
+       },
        'button[text="test button"]':{
          click:this.onClick
+       },
+       'button[text="C/F"]':{
+       	 click:function(me){
+       	    console.log(me.getText());
+       	    if(this.myview.columns[6].isHidden){
+       	    console.log('condi1');
+       	       this.myview.columns[6].isHidden=false;
+       	       this.myview.columns[6].show();
+       	       this.myview.columns[5].hide();
+       	    }else{
+       	    	console.log('condi2');
+       	       this.myview.columns[6].isHidden=true;
+       	       this.myview.columns[5].show();
+       	       this.myview.columns[6].hide();
+       	    }
+       	 }
        },
        'button[text="Ajax Load"]':{
           click:function(){

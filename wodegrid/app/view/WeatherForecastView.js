@@ -2,11 +2,9 @@ Ext.define("wodegrid.view.WeatherForecastView", {
     extend: 'Ext.grid.Panel',
     alias: 'widget.forecastView',
     title: 'Weather Report',
-    model:'weatherForecast',
-    initComponent: function () {
-
-        this.store = 'weatherForecast',
-        this.columns = [{
+    model: 'weatherForecast',
+    store: 'weatherForecast',
+    columns: [{
                 dataIndex: 'date',
                 text: "date"
             }, {
@@ -19,7 +17,6 @@ Ext.define("wodegrid.view.WeatherForecastView", {
                 dataIndex: "tempMaxF",
                 text: "tempMaxF"
             }
-        ];
-        this.callParent(arguments);
-    }
+        ]
+ 
 });

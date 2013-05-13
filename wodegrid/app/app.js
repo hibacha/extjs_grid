@@ -9,7 +9,7 @@ Ext.application({
 
     models: ["weatherForecast","WeatherRecord","User","Customer"],
 
-    controllers: ["Central","Main"],
+    controllers: ["Main", "Central"],
 
     name: 'wodegrid',
 
